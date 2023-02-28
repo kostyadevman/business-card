@@ -2,7 +2,7 @@
   <section class="hero">
     <img src="~/assets/photo.jpg" alt="a man smiling" class="hero__image">
     <div class="hero__bio">
-      <h2>Тимошенко Константин</h2>
+      <p class="hero__name">Тимошенко Константин</p>
       <h3>Фронтенд-разработчик</h3>
       <p class="basic-info">
         Привет! Я занимаюсь разработкой современных веб приложений
@@ -19,35 +19,60 @@
 <style lang="scss" scoped >
 
 .hero {
-  // height: 860px;
   display: grid;
-  grid-template-columns: repeat(12,minmax(10px,1fr));
-  grid-column-gap: 12px;
+  grid-gap: 10%;
+  grid-template-columns: 45% 45%;
+  grid-template-rows: auto;
+
+  @include mobile {
+    grid-template-columns: 100%;
+  }
 }
 
 .hero__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  grid-column: 1 / span 5;
   padding: 100px 0;
+
+  @include tablet {
+    padding: 15px 0;
+  }
+
+  @include mobile {
+    padding: 0;
+  }
+
 }
 
 .hero__bio {
-  grid-column: 7 / span 6;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @include mobile {
+    text-align: center;
+  }
 }
 
-h2 {
-  font-size: 4rem;
-  color: var(--dark-grey);
-  margin-bottom: .785em;
+.hero__name {
   position: relative;
+  margin-bottom: .785em;
+  font-weight: bold;
+  font-size: 3.7rem;
+  color: var(--dark-grey);
+
+  @include tablet {
+    font-size: 1.8rem;
+  }
+
+  @include mobile {
+    font-size: 2rem;
+  }
+
 }
 
-h2::before {
+.hero__name::before {
   content: "";
   width: 100px;
   height: 4px;
@@ -55,21 +80,42 @@ h2::before {
   background: #333;
   left: -135px;
   top: 30px; 
+
+
+  @include tablet {
+    width: 70px;
+    height: 3px;
+    left: -90px;
+    top: 30px;
+  }
+
+  @include mobile {
+    display: none;
+  }
 }
 
 h3 {
   font-size: 2.2rem;
+
+  @include tablet {
+    font-size: 1.2rem;
+  }
+  @include mobile {
+    font-size: 1.4rem;
+  }
 }
 
 .basic-info {
   font-size: 1.5rem;
   line-height: 155%;
   padding-block: 2em;
-}
-
-nav {
-  display: flex;
-  justify-content: flex-start;
+  
+  @include tablet {
+    font-size: 1rem;
+  }
+  @include mobile {
+    font-size: 1.2rem;
+  }
 }
 
 

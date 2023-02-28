@@ -78,6 +78,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .contacts {
   display: flex;
   align-items: center;
@@ -90,14 +91,18 @@ export default {
 
   &__list {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
     margin-top: 150px;
     list-style: none;
 
+
     a {
       display: flex;
       align-items: center;
+      min-width: 150px;
+      margin-bottom: 20px;
       text-decoration: none;
     }
 
@@ -109,7 +114,6 @@ export default {
   }
 
   &__item:hover {
-      // background-color: red;
       span {
         color: var(--accent);
       }

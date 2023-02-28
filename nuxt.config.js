@@ -24,13 +24,18 @@ export default {
    ** Nuxt.js modules
    ** Doc: https://modules.nuxtjs.org
    */
-  modules: [],
-
+  modules: ['@nuxtjs/style-resources'],
+  styleResources: {
+    scss: [
+        'assets/style/mixins.scss',
+    ]
+  },
   /*
    ** Global CSS
    ** Doc: https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-css
    */
   css: [],
+
 
   /*
    ** Plugins to load before mounting the App

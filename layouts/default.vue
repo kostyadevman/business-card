@@ -5,6 +5,7 @@
 </template>
 
 <style lang="scss">
+
 * {
   margin: 0;
   padding: 0;
@@ -31,14 +32,20 @@ body {
 }
 
 nav {
+  font-size: 14px;
   display: flex;
   justify-content: flex-start;
+  margin-right: 120px;
+  
+  @include tablet {
+    flex-direction: column;
+    margin: 0;
+  }
 }
 
 .nav__link {
   display: inline;
   width: 100%;
-  max-width: 200px;
   padding: .785em 2em;
   font-weight: bold;
   font-size: .725rem;
@@ -48,12 +55,18 @@ nav {
 
   &--btn {
     text-align: center;
-    margin-right: 12px;
-    max-width: 125px;
     border: 1px solid var(--light-grey);
     border-radius: 100px;
     &:hover {
       border: 1px solid var(--accent);
+    }
+
+    &:not(:last-child) {
+      margin-right: 12px;
+    }
+
+    @include tablet {
+      margin: 0 0 20px 0;
     }
   }
   
